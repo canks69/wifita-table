@@ -22,7 +22,7 @@ function buildTable(data) {
 
 	data.forEach(function(item) {
 			var row = $('<tr>');
-			for (let i = 0; i <= 6; i++) {
+			for (let i = 0; i <= 7; i++) {
 				if(i == 0){
 					row.append($('<td>').text(item['essid']));
 				} else if(i == 1){
@@ -36,8 +36,13 @@ function buildTable(data) {
 				} else if(i == 5){
 					row.append($('<td>').text(item['channel']));
 				} else if(i == 6){
-					
 					row.append($('<td>').html(setStatus(item['signal_level'])));
+				}else{
+					var aaa = document.createElement('a');
+					aaa.setAttribute('class', 'btn btn-primary');
+					aaa.setAttribute('href', '/?mac='+item['mac']+'&essid'+item['essid']);
+					aaa.innerHTML = 'Select';
+					row.append($('<td>').html(aaa));
 				}
 			}
 			tbody.append(row);
@@ -48,7 +53,6 @@ function buildTable(data) {
 
 function setStatus(val){
 	var label = document.createElement('lable');
-	console.log();
 	if (val >= -30 && val <= -1) {
 			label.classList.add('status', 'green');
 	} else if (val >= -50 && val <= -31) {

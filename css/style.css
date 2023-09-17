@@ -97,9 +97,9 @@ tbody tr.hide {
 	transform: translateX(100%);
 }
 
-tbody tr:hover {
+/* tbody tr:hover {
 	background-color: #8FBFFC !important;
-}
+} */
 
 tbody tr td{
 	transition: .2s ease-in-out;
@@ -150,4 +150,24 @@ thead th:hover {
 
 thead th.active,tbody td.active {
 	color: #7FB4F7;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: #007bff; 
+	color: #fff; 
+	border-radius: 5px; 
+}
+
+.btn:hover {
+	opacity: 0.8;
 }
